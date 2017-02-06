@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{8AA7827F-2695-3FA5-B6DA-0199713F1013}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>pcloudcc</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\console-client\pCloudCC\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pcloudcc.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pcloudcc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\console-client\pCloudCC\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pcloudcc.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pcloudcc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\console-client\pCloudCC\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">pcloudcc.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">pcloudcc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\console-client\pCloudCC\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">pcloudcc.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">pcloudcc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\win\pthreads-w32;C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>HAVE_STRUCT_TIMESPEC;WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>pthreadVC2.lib;Iphlpapi.lib;CbFS.lib;zlibwapi.lib;pclsync.lib;mbedTLS.lib;fuse2cbfs.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_system-vc140-mt-gd-1_61.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_program_options-vc140-mt-gd-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Libs;C:/console-client/pCloudCC/lib/pclsync;C:/console-client/pCloudCC/lib/pclsync/$(Configuration);C:/console-client/pCloudCC/lib/mbedtls/library;C:/console-client/pCloudCC/lib/mbedtls/library/$(Configuration);C:/console-client/pCloudCC/lib/sqlite;C:/console-client/pCloudCC/lib/sqlite/$(Configuration);C:/console-client/pCloudCC/lib/poverlay_linux;C:/console-client/pCloudCC/lib/poverlay_linux/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/console-client/pCloudCC/Debug/pcloudcc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/console-client/pCloudCC/Debug/pcloudcc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ASIO_WINDOWS;BOOST_SYSTEM_NO_DEPRECATED;BOOST_ALL_DYN_LINK;_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;_DEBUG;_WIN32_WINDOW;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>boost_system-vc140-mt-gd-1_59.lib;boost_program_options-vc140-mt-gd-1_59.lib;boost_thread-vc140-mt-gd-1_59.lib;boost_chrono-vc140-mt-gd-1_59.lib;boost_date_time-vc140-mt-gd-1_59.lib;boost_atomic-vc140-mt-gd-1_59.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;psynclib.lib;libmbedtls.a.lib;fuse.lib;pthread.lib;z.lib;dl.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/console-client/pCloudCC/lib/pclsync;C:/console-client/pCloudCC/lib/pclsync/$(Configuration);C:/console-client/pCloudCC/lib/mbedtls/library;C:/console-client/pCloudCC/lib/mbedtls/library/$(Configuration);C:/console-client/pCloudCC/lib/sqlite;C:/console-client/pCloudCC/lib/sqlite/$(Configuration);C:/console-client/pCloudCC/lib/poverlay_linux;C:/console-client/pCloudCC/lib/poverlay_linux/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/console-client/pCloudCC/Release/pcloudcc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/console-client/pCloudCC/Release/pcloudcc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;psynclib.lib;libmbedtls.a.lib;fuse.lib;pthread.lib;z.lib;dl.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_system-vc140-mt-1_61.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_program_options-vc140-mt-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/console-client/pCloudCC/lib/pclsync;C:/console-client/pCloudCC/lib/pclsync/$(Configuration);C:/console-client/pCloudCC/lib/mbedtls/library;C:/console-client/pCloudCC/lib/mbedtls/library/$(Configuration);C:/console-client/pCloudCC/lib/sqlite;C:/console-client/pCloudCC/lib/sqlite/$(Configuration);C:/console-client/pCloudCC/lib/poverlay_linux;C:/console-client/pCloudCC/lib/poverlay_linux/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/console-client/pCloudCC/MinSizeRel/pcloudcc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/console-client/pCloudCC/MinSizeRel/pcloudcc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;psynclib.lib;libmbedtls.a.lib;fuse.lib;pthread.lib;z.lib;dl.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_system-vc140-mt-1_61.lib;C:\boost_1_61_0\lib32-msvc-14.0\libboost_program_options-vc140-mt-1_61.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/console-client/pCloudCC/lib/pclsync;C:/console-client/pCloudCC/lib/pclsync/$(Configuration);C:/console-client/pCloudCC/lib/mbedtls/library;C:/console-client/pCloudCC/lib/mbedtls/library/$(Configuration);C:/console-client/pCloudCC/lib/sqlite;C:/console-client/pCloudCC/lib/sqlite/$(Configuration);C:/console-client/pCloudCC/lib/poverlay_linux;C:/console-client/pCloudCC/lib/poverlay_linux/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/console-client/pCloudCC/RelWithDebInfo/pcloudcc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/console-client/pCloudCC/RelWithDebInfo/pcloudcc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\console-client\pCloudCC\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/console-client/pCloudCC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/console-client/pCloudCC -BC:/console-client/pCloudCC --check-stamp-file C:\console-client\pCloudCC\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/console-client/pCloudCC/CMakeLists.txt;C:\console-client\pCloudCC\CMakeLists.txt;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCCompiler.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\FindBoost.cmake;C:\console-client\pCloudCC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\console-client\pCloudCC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/console-client/pCloudCC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/console-client/pCloudCC -BC:/console-client/pCloudCC --check-stamp-file C:\console-client\pCloudCC\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/console-client/pCloudCC/CMakeLists.txt;C:\console-client\pCloudCC\CMakeLists.txt;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCCompiler.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\FindBoost.cmake;C:\console-client\pCloudCC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\console-client\pCloudCC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/console-client/pCloudCC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/console-client/pCloudCC -BC:/console-client/pCloudCC --check-stamp-file C:\console-client\pCloudCC\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/console-client/pCloudCC/CMakeLists.txt;C:\console-client\pCloudCC\CMakeLists.txt;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCCompiler.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\FindBoost.cmake;C:\console-client\pCloudCC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\console-client\pCloudCC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/console-client/pCloudCC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/console-client/pCloudCC -BC:/console-client/pCloudCC --check-stamp-file C:\console-client\pCloudCC\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/console-client/pCloudCC/CMakeLists.txt;C:\console-client\pCloudCC\CMakeLists.txt;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInitialize.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCCompiler.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\console-client\pCloudCC\CMakeFiles\3.5.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.5\Modules\FindBoost.cmake;C:\console-client\pCloudCC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\console-client\pCloudCC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\console-client\pCloudCC\main.cpp" />
+    <ClCompile Include="C:\console-client\pCloudCC\pclsync_lib.cpp" />
+    <ClCompile Include="C:\console-client\pCloudCC\control_tools.cpp" />
+    <ClCompile Include="C:\console-client\pCloudCC\lib\poverlay_linux\debug.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\console-client\pCloudCC\lib\sqlite\sqlite3.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lib\poverlay_linux\overlay_client.c" />
+    <ClCompile Include="pclsync_lib_c.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/console-client/pCloudCC/pclsync.vcxproj">
+      <Project>EECADB6D-D329-38F0-AEE8-52BAEA03CDBD</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="control_tools.h" />
+    <ClInclude Include="lib\poverlay_linux\debug.h" />
+    <ClInclude Include="lib\poverlay_linux\overlay_client.h" />
+    <ClInclude Include="lib\sqlite\sqlite3.h" />
+    <ClInclude Include="pclsync_lib.h" />
+    <ClInclude Include="pclsync_lib_c.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

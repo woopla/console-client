@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{EECADB6D-D329-38F0-AEE8-52BAEA03CDBD}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>pclsync</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\Libs\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\win\fuse2cbfs;$(SolutionDir)\lib\sqlite;$(SolutionDir)\win\pthreads-w32;$(SolutionDir)\win\mbed\include;$(SolutionDir)\win\zlib-1.2.8</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;PTW32_STATIC_LIB;ZLIB_WINAPI;HAVE_STRUCT_TIMESPEC;P_SSL_MBEDTLS;_WINSOCK_DEPRECATED_NO_WARNINGS;_WINDOWS;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>$(ProjectDir)\lib;$(ProjectDir)\Libs;</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost_1_61_0;C:\console-client\pCloudCC\lib\sqlite;C:\console-client\pCloudCC\lib\pclsync;C:\console-client\pCloudCC\lib\poverlay_linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="C:\console-client\pCloudCC\CMakeFiles\pclsync" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="win\pclsync\cli.c" />
+    <ClCompile Include="win\pclsync\papi.c" />
+    <ClCompile Include="win\pclsync\pasyncnet.c" />
+    <ClCompile Include="win\pclsync\pbusinessaccount.c" />
+    <ClCompile Include="win\pclsync\pcache.c" />
+    <ClCompile Include="win\pclsync\pcallbacks.c" />
+    <ClCompile Include="win\pclsync\pcloudcrypto.c" />
+    <ClCompile Include="win\pclsync\pcompat.c" />
+    <ClCompile Include="win\pclsync\pcompression.c" />
+    <ClCompile Include="win\pclsync\pcontacts.c" />
+    <ClCompile Include="win\pclsync\pcrc32c.c" />
+    <ClCompile Include="win\pclsync\pcrypto.c" />
+    <ClCompile Include="win\pclsync\pdiff.c" />
+    <ClCompile Include="win\pclsync\pdownload.c" />
+    <ClCompile Include="win\pclsync\pexternalstatus.c" />
+    <ClCompile Include="win\pclsync\pfileops.c" />
+    <ClCompile Include="win\pclsync\pfolder.c" />
+    <ClCompile Include="win\pclsync\pfs.c" />
+    <ClCompile Include="win\pclsync\pfscrypto.c" />
+    <ClCompile Include="win\pclsync\pfsfolder.c" />
+    <ClCompile Include="win\pclsync\pfsstatic.c" />
+    <ClCompile Include="win\pclsync\pfstasks.c" />
+    <ClCompile Include="win\pclsync\pfsupload.c" />
+    <ClCompile Include="win\pclsync\pfsxattr.c" />
+    <ClCompile Include="win\pclsync\pintervaltree.c" />
+    <ClCompile Include="win\pclsync\plibs.c" />
+    <ClCompile Include="win\pclsync\plist.c" />
+    <ClCompile Include="win\pclsync\plocalnotify.c" />
+    <ClCompile Include="win\pclsync\plocalscan.c" />
+    <ClCompile Include="win\pclsync\plocks.c" />
+    <ClCompile Include="win\pclsync\pmemlock.c" />
+    <ClCompile Include="win\pclsync\pnetlibs.c" />
+    <ClCompile Include="win\pclsync\pnotifications.c" />
+    <ClCompile Include="win\pclsync\poverlay.c" />
+    <ClCompile Include="win\pclsync\poverlay_lin.c" />
+    <ClCompile Include="win\pclsync\poverlay_mac.c" />
+    <ClCompile Include="win\pclsync\poverlay_win.c" />
+    <ClCompile Include="win\pclsync\pp2p.c" />
+    <ClCompile Include="win\pclsync\ppagecache.c" />
+    <ClCompile Include="win\pclsync\ppassword.c" />
+    <ClCompile Include="win\pclsync\prunratelimit.c" />
+    <ClCompile Include="win\pclsync\pscanner.c" />
+    <ClCompile Include="win\pclsync\psettings.c" />
+    <ClCompile Include="win\pclsync\pssl-mbedtls.c" />
+    <ClCompile Include="win\pclsync\pssl.c" />
+    <ClCompile Include="win\pclsync\pstatus.c" />
+    <ClCompile Include="win\pclsync\psyncer.c" />
+    <ClCompile Include="win\pclsync\psynclib.c" />
+    <ClCompile Include="win\pclsync\ptasks.c" />
+    <ClCompile Include="win\pclsync\ptimer.c" />
+    <ClCompile Include="win\pclsync\ptree.c" />
+    <ClCompile Include="win\pclsync\publiclinks.c" />
+    <ClCompile Include="win\pclsync\pupload.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win\pclsync\miniz.h" />
+    <ClInclude Include="win\pclsync\paccountevents.h" />
+    <ClInclude Include="win\pclsync\papi.h" />
+    <ClInclude Include="win\pclsync\pasyncnet.h" />
+    <ClInclude Include="win\pclsync\pbusinessaccount.h" />
+    <ClInclude Include="win\pclsync\pcache.h" />
+    <ClInclude Include="win\pclsync\pcallbacks.h" />
+    <ClInclude Include="win\pclsync\pcloudcrypto.h" />
+    <ClInclude Include="win\pclsync\pcompat.h" />
+    <ClInclude Include="win\pclsync\pcompiler.h" />
+    <ClInclude Include="win\pclsync\pcompression.h" />
+    <ClInclude Include="win\pclsync\pcontacts.h" />
+    <ClInclude Include="win\pclsync\pcrc32c.h" />
+    <ClInclude Include="win\pclsync\pcrypto.h" />
+    <ClInclude Include="win\pclsync\pdatabase.h" />
+    <ClInclude Include="win\pclsync\pdiff.h" />
+    <ClInclude Include="win\pclsync\pdownload.h" />
+    <ClInclude Include="win\pclsync\pexternalstatus.h" />
+    <ClInclude Include="win\pclsync\pfileops.h" />
+    <ClInclude Include="win\pclsync\pfolder.h" />
+    <ClInclude Include="win\pclsync\pfs.h" />
+    <ClInclude Include="win\pclsync\pfscrypto.h" />
+    <ClInclude Include="win\pclsync\pfsfolder.h" />
+    <ClInclude Include="win\pclsync\pfsstatic.h" />
+    <ClInclude Include="win\pclsync\pfstasks.h" />
+    <ClInclude Include="win\pclsync\pfsupload.h" />
+    <ClInclude Include="win\pclsync\pfsxattr.h" />
+    <ClInclude Include="win\pclsync\pintervaltree.h" />
+    <ClInclude Include="win\pclsync\plibs.h" />
+    <ClInclude Include="win\pclsync\plist.h" />
+    <ClInclude Include="win\pclsync\plocalnotify.h" />
+    <ClInclude Include="win\pclsync\plocalscan.h" />
+    <ClInclude Include="win\pclsync\plocks.h" />
+    <ClInclude Include="win\pclsync\pmemlock.h" />
+    <ClInclude Include="win\pclsync\pnetlibs.h" />
+    <ClInclude Include="win\pclsync\pnotifications.h" />
+    <ClInclude Include="win\pclsync\poverlay.h" />
+    <ClInclude Include="win\pclsync\pp2p.h" />
+    <ClInclude Include="win\pclsync\ppagecache.h" />
+    <ClInclude Include="win\pclsync\ppassword.h" />
+    <ClInclude Include="win\pclsync\ppassworddict.h" />
+    <ClInclude Include="win\pclsync\prunratelimit.h" />
+    <ClInclude Include="win\pclsync\pscanexts.h" />
+    <ClInclude Include="win\pclsync\pscanner.h" />
+    <ClInclude Include="win\pclsync\psettings.h" />
+    <ClInclude Include="win\pclsync\pssl-mbedtls.h" />
+    <ClInclude Include="win\pclsync\pssl.h" />
+    <ClInclude Include="win\pclsync\psslcerts.h" />
+    <ClInclude Include="win\pclsync\pstatus.h" />
+    <ClInclude Include="win\pclsync\psyncer.h" />
+    <ClInclude Include="win\pclsync\psynclib.h" />
+    <ClInclude Include="win\pclsync\ptasks.h" />
+    <ClInclude Include="win\pclsync\ptimer.h" />
+    <ClInclude Include="win\pclsync\ptree.h" />
+    <ClInclude Include="win\pclsync\ptypes.h" />
+    <ClInclude Include="win\pclsync\publiclinks.h" />
+    <ClInclude Include="win\pclsync\pupload.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
