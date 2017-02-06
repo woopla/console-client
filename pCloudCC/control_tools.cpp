@@ -10,11 +10,14 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <unistd.h>
-#include <syslog.h>
+
 #include <string.h>
 #include <map>
 #include <string>
+#ifdef P_OS_POSIX
+#include <unistd.h>
+#include <syslog.h>
+#endif
 
 namespace control_tools{
 
@@ -34,7 +37,8 @@ int start_crypto(const char * pass) {
     std::cout << "Start Crypto failed. return is " << ret<< " and message is "<<errm << std::endl;
   else 
     std::cout << "Crypto started. "<< std::endl;
-  free(errm);  
+  free(errm);
+  return ret;
 }
 int stop_crypto(){
   int ret;
@@ -44,6 +48,7 @@ int stop_crypto(){
   else 
     std::cout << "Crypto Stopped. "<< std::endl;
   free(errm);  
+  return ret;
 }
 int finalize(){
    int ret;
@@ -54,6 +59,7 @@ int finalize(){
     std::cout << "Exiting ..."<< std::endl;
   
   free(errm);  
+  return 0;
 }
 void process_commands()
 {
@@ -74,8 +80,10 @@ void process_commands()
   }
 }
 
+
 int daemonize(bool do_commands) {
-  pid_t pid, sid;
+#ifdef P_OS_POSIX
+	pid_t pid, sid;
 
   pid = fork();
   if (pid < 0) 
@@ -106,7 +114,9 @@ int daemonize(bool do_commands) {
   while (1) {
     sleep(10);
   }
-  
+#else
+	return 0;
+#endif
 }
   
 }

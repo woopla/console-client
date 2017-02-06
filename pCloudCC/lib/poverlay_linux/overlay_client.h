@@ -27,7 +27,7 @@
 #ifndef OVERLAY_CLIENT_H
 #define OVERLAY_CLIENT_H
 
-#define P_OS_MACOS
+#define P_OS_WINDOWS
 #ifdef __cplusplus
 extern "C" {
 #endif

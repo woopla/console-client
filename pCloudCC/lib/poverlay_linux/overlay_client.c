@@ -25,25 +25,153 @@
 */ 
 
 #include <stdio.h> 
-#include <sys/socket.h> 
-#include <sys/un.h> 
 #include <stdlib.h> 
-#include <unistd.h> 
 #include <stdint.h> 
 #include <errno.h> 
-#include <netinet/in.h> 
 
 #include "overlay_client.h" 
 #include "debug.h" 
 #define POVERLAY_BUFSIZE 512 
 
+
 typedef struct _message {
-uint32_t type;
-uint64_t length;
-char value[];
+	uint32_t type;
+	uint64_t length;
+	char value[];
 } message;
 
 
+int QueryState(pCloud_FileState *state, char * path) {
+	int rep = 0;
+	char * errm;
+	if (!SendCall(4, path /*IN*/, &rep, &errm)) {
+		debug(D_NOTICE, "QueryState responese rep[%d] path[%s]", rep, path);
+		if (errm)
+			debug(D_NOTICE, "The error is %s", errm);
+		if (rep == 10)
+			*state = FileStateInSync;
+		else if (rep == 12)
+			*state = FileStateInProgress;
+		else if (rep == 11)
+			*state = FileStateNoSync;
+		else
+			*state = FileStateInvalid;
+	}
+	else
+		debug(D_ERROR, "QueryState ERROR rep[%d] path[%s]", rep, path);
+	free(errm);
+	return 0;
+}
+
+#ifdef P_OS_WINDOWS
+#include <windows.h> 
+#include <conio.h>
+#include <tchar.h>
+
+int SendCall(int id /*IN*/, const char * path /*IN*/, int * ret /*OUT*/, char ** errm /*OUT*/)
+//QueryState(FileState state, LPCWSTR path)
+{
+	HANDLE hPipe;
+	char  chBuf[POVERLAY_BUFSIZE];
+	BOOL   fSuccess = FALSE;
+	DWORD  cbRead, cbToWrite, cbWritten, dwMode;
+	LPTSTR lpszPipename = TEXT("\\\\.\\pipe\\pStatusPipe");
+
+	while (1)
+	{
+		hPipe = CreateFile(
+			lpszPipename,   // pipe name 
+			GENERIC_READ |  // read and write access 
+			GENERIC_WRITE,
+			0,              // no sharing 
+			NULL,           // default security attributes
+			OPEN_EXISTING,  // opens existing pipe 
+			0,              // default attributes 
+			NULL);          // no template file 
+
+		if (hPipe != INVALID_HANDLE_VALUE)
+			break;
+
+		if (GetLastError() != ERROR_PIPE_BUSY)
+		{
+			// _logfile << "Could not open pipe. GLE=" << GetLastError() << std::endl;
+			return -1;
+		}
+		if (!WaitNamedPipe(lpszPipename, 20000))
+		{
+			debug(D_NOTICE, "Could not open pipe: 20 second wait timed out." );
+			return -1;
+		}
+	}
+
+	dwMode = PIPE_READMODE_MESSAGE;
+	fSuccess = SetNamedPipeHandleState(
+		hPipe,    // pipe handle 
+		&dwMode,  // new pipe mode 
+		NULL,     // don't set maximum bytes 
+		NULL);    // don't set maximum time 
+	if (!fSuccess)
+	{
+		debug(D_NOTICE, "SetNamedPipeHandleState failed. GLE= %d", GetLastError());
+		return -1;
+	}
+
+	int pathSize = strlen(path);
+	int messSize = sizeof(message) + messSize + 1;
+	message* mes = (message *)malloc(messSize);
+    mes->type = id;
+	memcpy(&mes->value[0], path, messSize);
+	mes->value[messSize] = '\0';
+	mes->length = messSize;
+
+	fSuccess = WriteFile(
+		hPipe,                  // pipe handle 
+		mes,             // message 
+		mes->length,              // message length 
+		&cbWritten,             // bytes written 
+		NULL);                  // not overlapped 
+
+	if (!fSuccess)
+	{
+		debug(D_NOTICE, "WriteFile to pipe failed. GLE= %d" , GetLastError() );
+		return -1;
+	}
+
+	// _logfile << L"\nMessage sent to server " << cbWritten << "bytes send, receiving reply as follows:\n";
+
+	do
+	{
+		fSuccess = ReadFile(
+			hPipe,    // pipe handle 
+			chBuf,    // buffer to receive reply 
+			POVERLAY_BUFSIZE,  // size of buffer 
+			&cbRead,  // number of bytes read 
+			NULL);    // not overlapped 
+
+		if (!fSuccess && GetLastError() != ERROR_MORE_DATA)
+			break;
+	} while (!fSuccess);  // repeat loop if ERROR_MORE_DATA 
+
+	if (!fSuccess)
+	{
+		debug(D_NOTICE, "ReadFile from pipe failed. GLE= %d", GetLastError() );
+		return -1;
+	}
+	CloseHandle(hPipe);
+	message *rep = (message *)chBuf;
+	*ret = (int) rep->type;
+	if (rep->value[0])
+      *errm = strdup(rep->value);
+	return 0;	
+}
+#else
+
+#if defined(P_OS_LINUX) || defined(P_OS_MACOS)
+#include <sys/socket.h> 
+#include <sys/un.h>
+#include <unistd.h>
+#include <netinet/in.h> 
+#endif
 
 #if defined(P_OS_MACOS)
 uint32_t clport = 8989 ;
@@ -51,26 +179,6 @@ uint32_t clport = 8989 ;
 char *clsoc = "/tmp/pcloud_unix_soc.sock" ;
 #endif
 
-int QueryState( pCloud_FileState *state, char * path) {
-  int rep = 0 ;
-  char * errm;
-  if (! SendCall ( 4 , path /*IN*/ , &rep, &errm)) {
-    debug ( D_NOTICE , "QueryState responese rep[%d] path[%s]" , rep, path);
-    if (errm)
-      debug ( D_NOTICE , "The error is %s" , errm);
-    if (rep == 10 )
-      *state = FileStateInSync ;
-    else if (rep == 12 )
-      *state = FileStateInProgress ;
-    else if (rep == 11 )
-      *state = FileStateNoSync ;
-    else 
-      *state = FileStateInvalid ;
-  } else 
-    debug ( D_ERROR , "QueryState ERROR rep[%d] path[%s]" , rep, path);
-  free (errm);
-return 0 ;
-}
 int SendCall( int id /*IN*/ ,const char * path /*IN*/ , int * ret /*OUT*/ , char ** errm /*OUT*/ ) {
   #if defined(P_OS_MACOS)
   struct sockaddr_in addr;
@@ -167,6 +275,7 @@ int SendCall( int id /*IN*/ ,const char * path /*IN*/ , int * ret /*OUT*/ , char
 
   return 0 ;
 }
+#endif //P_OS_WINDOWS
 
 #ifdef PCLOUD_TESTING
 int main ( int arc, char **argv ){

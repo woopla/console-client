@@ -1,6 +1,8 @@
 #ifndef _DEBUG_H
 #define _DEBUG_H
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #define REGISTRY_KEY_PCLOUD    "SOFTWARE\\PCloud\\pCloud"
 
 #define D_NONE     0
@@ -34,5 +36,7 @@ void pc_debug(const char *file, const char *function, int unsigned line, int uns
   __attribute__ ((format (printf, 5, 6)))
 #endif
 ;
-
+#ifdef __cplusplus
+}
+#endif
 #endif /*_DEBUG_H*/
